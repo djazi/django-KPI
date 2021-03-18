@@ -4,14 +4,14 @@ from django.db import models
 
 
 class production(models.Model):
-    ID_prod = models.IntegerField(max_length=100)
+    ID_prod = models.IntegerField()
     code_article = models.CharField(max_length=100)
     Date = models.CharField(max_length=100)
     heure = models.CharField(max_length=100)
 
 
 class production_NC(models.Model):
-    ID_prod_NC = models.IntegerField(max_length=100)
+    ID_prod_NC = models.IntegerField()
     code_article = models.CharField(max_length=100)
     Date = models.CharField(max_length=100)
     heure = models.CharField(max_length=100)
