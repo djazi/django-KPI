@@ -4,4 +4,6 @@ app_name = "EF_PPM"
 urlpatterns = [
     path('',views.index,name='KPI'),
     path('table',views.table,name="table")
+    
+    
 ]
