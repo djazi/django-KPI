@@ -5,16 +5,20 @@ from django.urls import reverse
 from django.db.models import Count
 # Create your views here.
 def index(request):
-    t=120
+
+    
+    
+    date = production.objects.distinct("Date").all()
     eff= production.objects.all().count()
-    r=  round((eff/120)*100,2)
+    ppm = production_NC.objects.all().count()
+    pc=  round((eff/120)*100,2)
+    pnc=round((ppm/eff)*1000000,2)
+
+
     return render(request, 'index.html', {
-        
-        #"eff": production.objects.aggregate(Count('ID_prod')),
-        "eff": r
-
-        
-
+        "eff": pc,
+        "ppm":pnc,
+        "dates":date
     })
 
 

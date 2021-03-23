@@ -3,6 +3,7 @@
 
 {% block body %}
 
+
         <div class="d-flex flex-column" id="content-wrapper">
             <div id="content">
                 <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
@@ -12,7 +13,21 @@
                 <div class="container-fluid">
                     <div class="d-sm-flex justify-content-between align-items-center mb-4">
                         <h3 class="text-dark mb-0">Dashboard</h3>
+                  
+                    <button type="button" id="btnsnap" class="btn btn-info">Snapshot</button>
+                    <button type="button" id="btnsave" class="btn btn-info">SAVE</button>
+                    
+                        <select name="dates" id="yo" class="form-select">
+                            <option value="Les Dates">DAYS</option>
+                            {% for i in dates %}
+                            <option value="{{ dates.Date }}">{{ i.Date }}</option>
+                            {% endfor %}
+                        </select>
                 </div>
+                
+                
+
+                
                     <div class="row">
                         <div class="col-md-6 col-xl-3 mb-4">
                             <div class="card shadow border-left-info py-2">
@@ -22,7 +37,7 @@
                                             <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span>EFFICIENCY RATE&nbsp;</span></div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span>{{eff}}</span></div>
+                                                    <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span>{{eff}}%</span></div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm">
@@ -46,7 +61,7 @@
                                     <div class="row align-items-center no-gutters">
                                         <div class="col mr-2">
                                             <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span>PPM</span></div>
-                                            <div class="text-dark font-weight-bold h5 mb-0"><span>18</span></div>
+                                            <div class="text-dark font-weight-bold h5 mb-0"><span>{{ppm}}</span></div>
                                         </div>
                                         <div class="col-auto"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 20 20" fill="none" class="fa-2x text-gray-300">
                                                 <path d="M2 10C2 5.58172 5.58172 2 10 2V10H18C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10Z" fill="currentColor"></path>
@@ -55,13 +70,13 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
                     </div>
-                            <button type="button" id="btnsnap" class="btn btn-info">Snapshot</button>
-                            
-                            <button type="button" id="btnsave" class="btn btn-info">SAVE</button>
+
+
+                    <h2> PPM </h2>
+                    <h2>EFFICIENCY</h2>
 
 
                     <div class="row">
