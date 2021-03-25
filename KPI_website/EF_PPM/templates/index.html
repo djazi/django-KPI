@@ -15,20 +15,22 @@
                         <h3 class="text-dark mb-0">Dashboard</h3>
 
                     <form action="" method="POST">
-                        
                         {% csrf_token %}
-                        <select name="datesss" id="yo" class="form-select">
-                            <option value="Les Dates">DAYS</option>
-                            {% for i in dates %}
-                            <option  value="{{dates.Date }}">{{ i.Date }}</option>
-                            {% endfor %}
-                        </select>
-                        
+
                         <input name="snap" type="submit"  class="btn btn-info" value="Snapshot">
                         <input name="save"  type="submit" class="btn btn-info" value="SAVE">
                         <input name="heure" type="time" placeholder="HEURE" min="8:00" max="18:00" required>                        
                         
                     </form>
+
+                    
+                        <select name="datesss" id="list" class="form-select" onchange="load()">
+                            <option value="Les Dates">DAYS</option>
+                            {% for i in dates %}
+                            <option data-date="{{ i.Date }}" value="{{i.Date }}">{{ i.Date }}</option>
+                            {% endfor %}
+                        </select>
+                    
                     
 
                     
@@ -86,9 +88,9 @@
                     </div>
 
 
-                    <h2> {{heu}} </h2>
+                    <h2> La quanitité produits:{{QT}}  </h2>
+                    <h2>Les produits Non Conformes:{{PNC}} </h2>
                     <h2> {{hi}}</h2>
-                    <h2> DATE SELECTED</h2>
 
 
                     <div class="row">

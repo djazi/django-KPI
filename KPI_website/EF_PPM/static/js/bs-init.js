@@ -5,3 +5,10 @@ $(document).ready(function(){
 	});
 
 });
+
+	function getSelectValue() {
+            var selectedValue = document.getElementById("list").value;
+            alert(selectedValue);
+        }
+        getSelectValue();
+ 
