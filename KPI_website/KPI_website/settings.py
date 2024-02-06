@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'production_KPI',
         'USER': 'postgres',
-        'PASSWORD': 'Fsociety25800',
+        'PASSWORD': 'adminpostgres',
         'HOST':'localhost',
         'PORT':'5433',
         
